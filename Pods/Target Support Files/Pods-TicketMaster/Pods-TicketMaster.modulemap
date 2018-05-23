@@ -1,0 +1,6 @@
+framework module Pods_TicketMaster {
+  umbrella header "Pods-TicketMaster-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,64 @@
+/* 
+  Localizable.strings
+  TicketMaster
+
+  Created by Justin Wells on 4/20/18.
+  Copyright © 2018 SynergyLabs. All rights reserved.
+*/
+
+//Home
+"homeTabTitle" = "Home";
+"topEvents" = "Top Events";
+"happeningToday" = "Happening today";
+"concert" = "Concerts";
+"sports" = "Sports";
+"theaterAndComedy" = "Theater & Comedy";
+"venues" = "Venues";
+"family" = "Family";
+"ticketsLeft" = "tickets left";
+"from" = "From";
+"searchPlaceholder" = "What are you looking for?";
+"connectFacebookLabel" = "See what your friends are into on Ticketmaster";
+"connectFacebook" = "Connect with Facebook";
+"recentlyViewed" = "Recently Viewed";
+"nearby" = "Nearby";
+"viewMore" = "View More";
+"event" = "Event";
+"emptyEventSearch" = "No Events";
+"location" = "Location";
+"anyDate" = "Any Date";
+"nextWeekend" = "Next Weekend";
+"setDates" = "Set Dates";
+"dates" = "Dates";
+"lowestPrice" = "Lowest Price";
+"bestSeats" = "Best Seats";
+"qty" = "Qty";
+"price" = "Price";
+"reset" = "Reset";
+"type" = "Type";
+"accessible" = "Accessible";
+"done" = "Done";
+
+//Search
+"searchTabTitle" = "Search";
+
+//Tickets
+"ticketsTabTitle" = "Tickets";
+"emptyViewTitle" = "My Tickets";
+"emptyViewSubTitle" = "This is where they'll be when you need them.";
+"emptyViewButtonTitle" = "Find Tickets";
+
+//Favorites
+"favoritesTabTitle" = "Favorites";
+"performers" = "Performers";
+"events" = "Events";
+"venues" = "Venues";
+"searchPerformersPlaceholder" = "Search for performers";
+"favoritesTabTitleLabel" = "Track your favorite performers";
+"favoritesTabSubtitleLabel" = "Never miss an event from your favorites and improve your event recommendations";
+"appleMusic" = "Music";
+"spotify" = "Spotify";
+"facebook" = "Facebook";
+
+//Account
+"accountTabTitle" = "Account";

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //Setup Firebase
+        FirebaseApp.configure()
+        
+        //Set Current Location by City (current location not implemented for demo)
+        UserDefaults.standard.set(sampleCurrentCity, forKey: "currentCity")
+        UserDefaults.standard.synchronize()
+        
+        // User is signed in.
+        self.setAppControllers(viewController: self.setupAppControllers())
+        
         return true
     }
 
@@ -40,7 +50,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    func setupAppControllers() -> UIViewController{
+        //Setup NavigationControllers for each tab
+        let homeVC = HomeController()
+        homeVC.tabBarItem = UITabBarItem(title: "homeTabTitle".localized(), image: UIImage(named: "home"), selectedImage: UIImage(named: "homeFilled"))
+        let navVC1 = NavigationController.init(rootViewController: homeVC)
+        
+        let searchVC = SearchController()
+        searchVC.tabBarItem = UITabBarItem(title: "searchTabTitle".localized(), image: UIImage(named: "search"), selectedImage: UIImage(named: "searchFilled"))
+        let navVC2 = NavigationController.init(rootViewController: searchVC)
+        
+        let ticketsVC = TicketsController()
+        ticketsVC.tabBarItem = UITabBarItem(title: "ticketsTabTitle".localized(), image: UIImage(named: "ticket"), selectedImage: UIImage(named: "ticketFilled"))
+        let navVC3 = NavigationController.init(rootViewController: ticketsVC)
+        
+        let favoritesVC = FavoritesController()
+        favoritesVC.tabBarItem = UITabBarItem(title: "favoritesTabTitle".localized(), image: UIImage(named: "favorites"), selectedImage: UIImage(named: "favoritesFilled"))
+        let navVC4 = NavigationController.init(rootViewController: favoritesVC)
+        
+        let accountVC = AccountController()
+        accountVC.tabBarItem = UITabBarItem(title: "accountTabTitle".localized(), image: UIImage(named: "account"), selectedImage: UIImage(named: "accountFilled"))
+        let navVC5 = NavigationController.init(rootViewController: accountVC)
+        
+        //Setup TabBarController
+        let tabVC = TabBarController()
+        tabVC.viewControllers = [navVC1, navVC2, navVC3, navVC4, navVC5]
+        
+        return tabVC
+    }
+    
+    func setAppControllers(viewController: UIViewController){
+        //Set TabBarController as Window
+        window?.rootViewController = viewController
+    }
 }
 
